@@ -9,30 +9,35 @@
     <link rel="shortcut icon" type="image/jpg" href="img/Logo2.png"/>
 </head>
 <body>
-    <header>
-        <div class="container-header">
-          <div class="logo">
+<header>
+    <div id="status-indicator">
+        <span class="status-dot"></span>
+        <span class="status-text">Site Online</span>
+    </div>
+    <div class="container-header">
+        <div class="logo">
             <img src="img/Logo2.png" alt="D & D Doces Momentos">
-          </div>
-          <nav>
-            <ul>
-              <li><a href="#inicio">Início</a></li>
-              <li><a href="#kits">Nossos Kits</a></li>
-              <li><a href="#como-funciona">Como Funciona</a></li>
-              <li><a href="#contato">Contato</a></li>
-            </ul>
-          </nav>
         </div>
-      </header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#kits">Nossos Kits</a></li>
+                <li><a href="#como-funciona">Como Funciona</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <main>
-        <section id="inicio" class="secao-inicio">
-            <div class="container-inicio">
-                <h2>Kits "Pegue e Monte" para festas doces e inesquecíveis</h2>
-                <p>Descubra a praticidade e a personalização dos nossos kits "pegue e monte" para criar festas doces com a sua cara!</p>
-                <a href="#kits" class="btn-ver-kits">Ver Kits</a>
-            </div>
-        </section>
+<main>
+    <section id="inicio" class="secao-inicio">
+        <div class="container-inicio">
+            <h2>Kits "Pegue e Monte" para festas doces e inesquecíveis</h2>
+            <p>Descubra a praticidade e a personalização dos nossos kits "pegue e monte" para criar festas doces com a sua cara!</p>
+            <a href="#kits" class="btn-ver-kits">Ver Kits</a>
+        </div>
+    </section>
+</main>
 
         <section id="kits" class="secao-kits">
             <div class="container-kits">
@@ -148,8 +153,6 @@
             </div>
           </section>
         
-      
-
         <section id="como-funciona" class="secao-como-funciona">
             <div class="container-como-funciona">
                 <h2>Como Funciona</h2>
@@ -173,6 +176,26 @@
             </div>
         </section>
 
+        <div id="review-section">
+          <h2>Avaliações</h2>
+          <div id="average-rating">
+              <span class="rating-stars" id="average-stars"></span>
+              <span class="rating-value" id="average-value">4.5</span> <!-- Exemplo de valor médio -->
+          </div>
+          <!-- Seção de avaliação -->
+          <div class="rating-input">
+              <span class="star" data-value="1">&#9733;</span>
+              <span class="star" data-value="2">&#9733;</span>
+              <span class="star" data-value="3">&#9733;</span>
+              <span class="star" data-value="4">&#9733;</span>
+              <span class="star" data-value="5">&#9733;</span>
+          </div>
+          <button id="submit-rating">Enviar Avaliação</button>
+      </div>
+      
+
+      
+
       <section id="contato" class="secao-contato">
         <div class="container-contato">
             <h2>Contato</h2>
@@ -180,13 +203,13 @@
                 <p>Endereço: Passagem 7 de dezembro, 4 - Bairro: Bengui, Belém-PA</p>
                 <p>Telefone: (91) 998593-2796 (91) 98232-7596</p>
                 <p>E-mail: driellesouza80@gmail.com</p>
-                <p>Horário de Atendimento: Segunda a Domingo, das 9h às 22h</p>
+                <p>Horário de Atendimento: Segunda a Domingo, das 9h às 22h</p> <!-- Corrigido fechamento da tag -->
             </div>
             <div class="contato-redes-sociais">
                 <a href="https://www.facebook.com/share/x6rFmyiDj7rKUvR7/?mibextid=qi2Omg">
                     <img src="img/Face.png" alt="Facebook">
                 </a>
-                <a href="https://www.instagram.com/docemomentos2022?utm_source=qr&igsh=NWszeWFhdGNrYTc4">
+                <a href="https://www.instagram.com/docemomentos2022?utm_source=qr&igshid=NWszeWFhdGNrYTc4">
                     <img src="img/Insta.png" alt="Instagram">
                 </a>
             </div>
@@ -205,10 +228,17 @@
   
   <!-- Modal para a imagem ampliada -->
 <div id="modal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="imgModal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imgModal">
 </div>
-
-    
+  
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener("load", function() {
+        document.body.classList.add('loaded');
+    });
+});
+</script>
+
 </html>
