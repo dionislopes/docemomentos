@@ -3,6 +3,8 @@ body {
   background-color: #ffebd2; /* Rosa claro */
   color: #333; /* Preto */
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -12,6 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: #f08080; /* Rosa escuro */
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover {
@@ -24,32 +27,42 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-}
-
-.logo {
-  width: 150px; /* Ajuste o tamanho conforme necessário */
+  background: linear-gradient(90deg, #f08080, #ffebd2); /* Gradiente de fundo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo img {
-  width: 100%; /* Logo ocupa 100% do contêiner */
-  height: auto; /* Mantém a proporção da logo */
+  width: 150px; /* Ajuste o tamanho conforme necessário */
 }
 
-
-.logo {
-  max-width: 100px; /* Reduz o tamanho da logo em telas menores */
+nav {
+  display: flex;
+  align-items: center;
 }
 
-nav ul {
+.nav-menu {
   list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
 }
 
-nav li {
-  display: inline-block;
+.nav-menu li {
   margin-right: 20px;
 }
+
+.nav-menu li a {
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-menu li a:hover {
+  background-color: #cd5c5c; /* Rosa antigo */
+  color: #fff;
+}
+
+
 
 /* Seção Início */
 .secao-inicio {
@@ -152,6 +165,7 @@ nav li {
   line-height: 1.5;
 }
 
+
 /* Seção Contato */
 .secao-contato {
   padding: 50px 0;
@@ -186,7 +200,8 @@ nav li {
   width: 100px; /* Ajuste o tamanho conforme necessário */
 }
 
-/* Estilos para o modal */
+
+/* Estilos do modal */
 .modal {
   display: none; /* Ocultar o modal por padrão */
   position: fixed;
@@ -199,6 +214,44 @@ nav li {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8); /* Fundo preto com opacidade */
 }
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Estilos de avaliação */
+.rating-input .star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ddd;
+  transition: color 0.2s;
+}
+
+.rating-input .star.selected,
+.rating-input .star:hover {
+  color: #f08080;
+}
+
 
 /* Estilos para a imagem ampliada */
 .modal-content {
@@ -225,3 +278,215 @@ nav li {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+#preloader .logo img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 80%;
+  max-width: 300px;
+  height: 10px;
+  background-color: #ffebd2; /* Rosa claro */
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #f08080; /* Rosa escuro */
+  animation: load 3s infinite;
+}
+
+@keyframes load {
+  0% {
+      width: 0;
+  }
+  50% {
+      width: 100%;
+  }
+  100% {
+      width: 0;
+  }
+}
+
+/* Ocultar o preloader quando a página estiver carregada */
+body.loaded #preloader {
+  display: none;
+}
+
+
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
+/* Indicador de Status */
+#status-indicator {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  margin-right: 10px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+      opacity: 1;
+  }
+  50% {
+      opacity: 0;
+  }
+}
+
+.status-text {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Estilos para a seção de avaliação */
+#review-section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffe0f0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#review-section h2, #review-section h3 {
+  color: #f08080; /* Rosa escuro */
+}
+
+#average-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.rating-stars {
+  font-size: 24px;
+  color: #ffd700; /* Dourado */
+}
+
+.rating-value {
+  font-size: 24px;
+  margin-left: 10px;
+}
+
+.rating-input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.rating-input .star {
+  font-size: 24px;
+  cursor: pointer;
+  color: #ccc; /* Cinza claro */
+}
+
+.rating-input .star:hover,
+.rating-input .star.selected {
+  color: #ffd700; /* Dourado */
+}
+
+#submit-rating {
+  background-color: #f08080; /* Rosa escuro */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+#submit-rating:hover {
+  background-color: #cd5c5c; /* Rosa antigo */
+}
+
+.rating-input .star {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #ddd;
+  transition: color 0.2s;
+}
+
+.rating-input .star.selected,
+.rating-input .star:hover {
+  color: #f08080;
+}
+
+
+/* Estilos da avaliação média */
+#average-rating {
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+/* Menu Responsivo */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 4px 0;
+  transition: all 0.3s;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffebd2;
+    position: absolute;
+    top: 70px;
+    left: 0;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+}
+
