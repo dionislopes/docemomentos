@@ -490,3 +490,28 @@ body.loaded #preloader {
   }
 }
 
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #ffebd2;
+    position: absolute;
+    top: 70px;
+    left: 0;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+}
+
