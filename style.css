@@ -62,8 +62,6 @@ nav {
   color: #fff;
 }
 
-
-
 /* Seção Início */
 .secao-inicio {
   text-align: center;
@@ -165,7 +163,6 @@ nav {
   line-height: 1.5;
 }
 
-
 /* Seção Contato */
 .secao-contato {
   padding: 50px 0;
@@ -200,7 +197,6 @@ nav {
   width: 100px; /* Ajuste o tamanho conforme necessário */
 }
 
-
 /* Estilos do modal */
 .modal {
   display: none; /* Ocultar o modal por padrão */
@@ -215,45 +211,6 @@ nav {
   background-color: rgba(0, 0, 0, 0.8); /* Fundo preto com opacidade */
 }
 
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Estilos de avaliação */
-.rating-input .star {
-  font-size: 2rem;
-  cursor: pointer;
-  color: #ddd;
-  transition: color 0.2s;
-}
-
-.rating-input .star.selected,
-.rating-input .star:hover {
-  color: #f08080;
-}
-
-
-/* Estilos para a imagem ampliada */
 .modal-content {
   margin: auto;
   display: block;
@@ -333,8 +290,6 @@ body.loaded #preloader {
   display: none;
 }
 
-
-/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa*/
 /* Indicador de Status */
 #status-indicator {
   display: flex;
@@ -442,7 +397,6 @@ body.loaded #preloader {
   color: #f08080;
 }
 
-
 /* Estilos da avaliação média */
 #average-rating {
   margin-top: 20px;
@@ -474,6 +428,7 @@ body.loaded #preloader {
     position: absolute;
     top: 70px;
     left: 0;
+    transition: all 0.3s ease;
   }
 
   .nav-menu li {
@@ -488,30 +443,61 @@ body.loaded #preloader {
   .nav-menu.active {
     display: flex;
   }
-}
 
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
+  .menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  /* Ajuste do indicador de status para dispositivos móveis */
+  #status-indicator {
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .status-text {
+    font-size: 12px;
+  }
+
+  /* Ajuste da seção de avaliação para dispositivos móveis */
+  #review-section {
+    padding: 10px;
+  }
+
+  #review-section h2, #review-section h3 {
+    font-size: 18px;
+  }
+
+  #average-rating {
     flex-direction: column;
-    width: 100%;
-    background-color: #ffebd2;
-    position: absolute;
-    top: 70px;
-    left: 0;
+    align-items: flex-start;
   }
 
-  .nav-menu li {
-    margin: 10px 0;
-    text-align: center;
+  .rating-stars {
+    font-size: 20px;
   }
 
-  .menu-toggle {
-    display: flex;
+  .rating-value {
+    font-size: 20px;
+    margin-left: 0;
+    margin-top: 5px;
   }
 
-  .nav-menu.active {
-    display: flex;
+  .rating-input .star {
+    font-size: 20px;
   }
 }
-
